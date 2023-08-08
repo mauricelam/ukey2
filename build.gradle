@@ -13,6 +13,7 @@
 // limitations under the License.
 
 apply plugin: 'java'
+apply plugin: 'me.champeau.jmh'
 apply plugin: 'com.google.protobuf'
 
 repositories {
@@ -22,9 +23,11 @@ repositories {
 buildscript {
   repositories {
     mavenCentral()
+    gradlePluginPortal()
   }
   dependencies {
     classpath 'com.google.protobuf:protobuf-gradle-plugin:0.9.0'
+    classpath "me.champeau.jmh:jmh-gradle-plugin:0.7.1"
   }
 }
 
@@ -33,7 +36,7 @@ dependencies {
     testImplementation group: 'com.google.guava', name: 'guava-testlib', version: '29.0-jre'
     testImplementation 'junit:junit:4.13'
     implementation "com.google.code.findbugs:jsr305:3.0.0"
-    implementation "com.google.protobuf:protobuf-java:3.19.3"
+    implementation "com.google.protobuf:protobuf-java:3.21.12"
     implementation "com.google.guava:guava:19.0"
 }
 
